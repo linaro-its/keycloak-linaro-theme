@@ -6,6 +6,7 @@
 }
 
 .login-pf body {
+    /* LINARO: Don't use a background image at all. Use white instead. */
     /* background: url("../img/keycloak-bg.png") no-repeat center center fixed; */
     background: none;
     background-size: cover;
@@ -35,6 +36,7 @@ textarea.pf-c-form-control {
 
 .pf-c-form-control:hover, .pf-c-form-control:focus {
     border-bottom-color: #79ac00;
+    /* LINARO: Disable use of Patternfly variable to force explicit colour */
     /* border-bottom-color: var(--pf-global--primary-color--100); */
     border-bottom-width: 2px;
     border-bottom-width: var(--pf-global--BorderWidth--md);
@@ -220,6 +222,10 @@ a#kc-current-locale-link::after {
 div.kc-logo-text {
     background-image: url(../img/keycloak-logo-text.png);
     background-repeat: no-repeat;
+    /*
+    LINARO: next three lines are apparently a deviation from
+    Keycloak theme but not sure why.
+    */
     background-size: contain;
     background-position: center center;
     color: blue;
@@ -482,6 +488,7 @@ ul#kc-totp-supported-apps {
 
 @media (max-width: 767px) {
 
+    /* LINARO: commented out as now a duplication from top */
     /*
     .login-pf body {
         background: white;
@@ -547,6 +554,10 @@ ul#kc-totp-supported-apps {
     }
 }
 
+/*
+LINARO: changed .btn to .pf-c-button but it may have been an
+unnecessary change!
+*/
 .card-pf form.form-actions .pf-c-button {
     float: right;
     margin-left: 10px;
@@ -619,6 +630,7 @@ ul#kc-totp-supported-apps {
 
 .select-auth-box-headline {
     font-size: var(--pf-global--FontSize--md);
+    /* LINARO: ignore PF variables and set explicit colour */
     /* color: var(--pf-global--primary-color--100); */
     color: #79ac00;
     font-weight: bold;
@@ -630,9 +642,12 @@ ul#kc-totp-supported-apps {
 
 .card-pf {
     margin: 0 auto;
+    /* LINARO: turn off box-shadow */
+    /* box-shadow: var(--pf-global--BoxShadow--lg); */
     box-shadow: none;
     padding: 0 20px;
     max-width: 500px;
+    /* LINARO: turn off border */
     /* border-top: 4px solid; */
     /* border-color: #0066CC; */ /* default - IE compatibility */
     /* border-color: var(--pf-global--primary-color--100); */
@@ -700,6 +715,13 @@ ul#kc-totp-supported-apps {
 }
 
 /* LINARO ADDITIONAL ITEMS */
+/*
+   From here, this is mostly a copy/paste from the previous
+   Linaro "login" theme CSS file. Newer additions have comments
+   to explain their purpose. For the rest, it isn't entirely
+   clear which are still used/needed.
+*/
+
 /* Stop cancel buttons showing a gradient */
 #kc-content .pf-c-button.btn-default {
     background-image: none;
@@ -814,40 +836,6 @@ div#wrapper {margin-top: 67px;}
     border-radius: 2px;
 }
 
-#login_form_row > .container {
-    position: relative;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top
-    color: #333;
-    background-color: inherit;
-}
-
-#login_form_row {
-    background-color:white;
-}
-
-#login_form_row .container {
-    margin-right: auto;
-    margin-left: auto;
-    color: #333;
-    background-color: inherit;
-}
-@media (min-width: 768px) {
-  #login_form_row .container {
-    width: 760px !important;
-  }
-}
-@media (min-width: 992px) {
-  #login_form_row .container {
-    width: 980px !important;
-  }
-}
-@media (min-width: 1200px) {
-  #login_form_row .container {
-    width: 1180px !important;
-  }
-}
 .block {
     background-color: white;
     padding: 10px;
